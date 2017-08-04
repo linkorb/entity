@@ -1,0 +1,16 @@
+---
+genre:
+  comedy: ~
+  crime: ~
+  drama: ~
+  thriller: ~
+  documentary: ~
+movie:
+  hackers:
+    imdb_id: "tt0113243"
+    year: 1995
+    genre: ["@comedy", "@crime", "@drama"]
+  mrrobot:
+    imdb_id: "tt4158110"
+    year: 2015
+    genre: ["@crime", "@drama", "@thriller"]
