@@ -2,12 +2,12 @@
 
 namespace Entity\Loader;
 
-use Entity\Model\EntityContainer;
+use Entity\Model\EntityCollection;
 use RuntimeException;
 
 class JsonEntityLoader extends ArrayEntityLoader
 {
-    public function loadFile(EntityContainer $container, $filename)
+    public function loadFile(EntityCollection $collection, $filename)
     {
         if (!file_exists($filename)) {
             throw new RuntimeException("File not found: " . $filename);
@@ -17,6 +17,6 @@ class JsonEntityLoader extends ArrayEntityLoader
         if (!$data) {
             throw new RuntimeException('JSON parse error: ' . json_last_error_msg());
         }
-        return $this->loadData($container, $data);
+        return $this->loadData($collection, $data);
     }
 }

@@ -3,7 +3,7 @@
 namespace Entity\Loader;
 
 use Entity\Model\EntityType;
-use Entity\Model\EntityContainer;
+use Entity\Model\EntityCollection;
 use RuntimeException;
 
 class AutoEntityLoader extends ArrayEntityLoader
@@ -13,7 +13,7 @@ class AutoEntityLoader extends ArrayEntityLoader
         $baseDir = getcwd();
 
         $type = new EntityType('root');
-        $container = new EntityContainer($type, 'root');
+        $container = new EntityCollection($type, 'root');
 
         $filename = $baseDir . '/entities.json';
         if (file_exists($filename)) {

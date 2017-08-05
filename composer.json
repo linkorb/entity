@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "symfony/yaml": "~3.0|~2.7"
+        "symfony/yaml": "~3.0|~2.7",
+        "linkorb/collection": "~1.0"
     },
     "require-dev": {
         "symfony/dotenv": "~3.0"

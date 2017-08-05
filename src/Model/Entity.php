@@ -3,9 +3,10 @@
 namespace Entity\Model;
 
 use Doctrine\Common\Inflector\Inflector;
+use Collection\Identifiable;
 use ReflectionClass;
 
-class Entity
+class Entity implements Identifiable
 {
     protected $name;
     protected $type;
@@ -74,6 +75,11 @@ class Entity
             return null;
         }
         return $this->properties[$name];
+    }
+
+    public function identifier()
+    {
+        return $this->getName();
     }
 
 }

@@ -2,13 +2,13 @@
 
 namespace Entity\Loader;
 
-use Entity\Model\EntityContainer;
+use Entity\Model\EntityCollection;
 use Symfony\Component\Yaml\Yaml;
 use RuntimeException;
 
 class YamlEntityLoader extends ArrayEntityLoader
 {
-    public function loadFile(EntityContainer $container, $filename)
+    public function loadFile(EntityCollection $collection, $filename)
     {
         if (!file_exists($filename)) {
             throw new RuntimeException("File not found: " . $filename);
@@ -18,6 +18,6 @@ class YamlEntityLoader extends ArrayEntityLoader
         if (!$data) {
             throw new RuntimeException('Yaml parse error');
         }
-        return $this->loadData($container, $data);
+        return $this->loadData($collection, $data);
     }
 }
